@@ -41,8 +41,6 @@ This challenge assumes that you used + to concatenate values together for consol
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 */
 
-console.assert(assertEqual("Bootcamp", "Bootcamp"));
-
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`Assertion Passed: ${actual} === ${expected}`)
@@ -59,6 +57,26 @@ assertEqual("Lighthouse Labs", "Bootcamp"); //equal
 assertEqual(1, 1); //equal
 
 console.assert(assertEqual("Bootcamp", "Bootcamp"));
+
+//EMOJIS:
+
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`Assertion Passed ❤: ${actual} === ${expected}`)
+    return true;
+  } else { //else runs if is false
+    console.log(`Assertion Failed :no_entry:: ${actual} !== ${expected}`)
+    return false;
+  } 
+  
+};
+
+// TEST CODE
+assertEqual("Lighthouse Labs", "Bootcamp"); //equal
+assertEqual(1, 1); //equal
+
+console.assert(assertEqual("Bootcamp", "Bootcamp"));
+
 
 
 /*
