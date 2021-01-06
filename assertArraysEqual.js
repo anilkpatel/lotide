@@ -34,12 +34,14 @@ const assertArraysEqual = function(actual, expected) {  //will use eqArrays to c
   if (eqArrays(actual, expected)) { //need value here using eqArrays, T of F if call it with 2 arrays. takes in 2 arguments, eval arrays 1 and arrays 2
     console.log(`Assertion Passed ❤: ${actual} === ${expected}`)
     return true;
-  } else { //else runs if is false
+  } else { //else runs if it is false
     console.log(`Assertion Failed :no_entry:: ${actual} !== ${expected}`)
     return false;
   } 
   
 };
 
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertArraysEqual(eqArrays([4], [1, 2, 3]), false); // => should PASS as is false?
+//assert will pass the two arrays themselves; 
+//pass the arguments for assertArraysEqual
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual([4], [1, 2, 3]); // => should FAIL
