@@ -19,9 +19,22 @@ You should always be thinking about other scenarios to consider. Here are some s
 */
 
 function head(array) {
+  //const number = array[0]; //return the element itself, not as array
+  return array[0]
+}
+
+//These two could work
+/*
+function head(array) {
   const number = array[0]; //return the element itself, not as array
   return number;
 }
+
+const tail = function(array) {
+  const newArray = array.slice(1);
+  return newArray;  //slice good for remove 1st few elements of array
+};
+*/
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -31,7 +44,6 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed :no_entry:: ${actual} !== ${expected}`)
     return false;
   } 
-  
 };
 
 // TEST CODE
@@ -41,39 +53,3 @@ assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 assertEqual("Bootcampp", "Bootcamp");
 assertEqual(6, 6);
 
-//console.assert(assertEqual("Bootcamp", "Bootcamp"));
-
-
-/*
-//SOLUTION without BACKTICKS per Monitor talking with Desk 10 Arlet 
-
-// My head function which returns the first item in the array.
-
-function head(array) {
-  const number = array[0];
-  return number;
-}
-
-// PREVIOUS FUNCTION IMPLEMENTATION
-
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log("Assertion Passed ❤: [actual] === [expected]")
-    //console.log("Assertion Passed :heart:: [actual] === [expected]");
-  } else {
-    //console.log("Assertion Passed ❤: [actual] === [expected]")
-    console.log("Assertion Failed :no_entry:: [actual] !== [expected]");
-  }
-
-};
-
-//TEST CODE
-console.log(head([5,3,5]));
-console.log(head(["Hello", "Lighthouse", "Labs"]));
-assertEqual(head([2, 6, 7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-
-assertEqual("Bootcampp", "Bootcamp");
-assertEqual(6, 6);
-
-*/
