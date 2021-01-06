@@ -17,25 +17,19 @@ It should return a new array.
 
 */
 
-//is this better approach???
-  const tail = function(array) {
-  const newArray = array.slice(1);
-  return newArray;  //slice good for remove 1st few elements of array
+//ACTUAL FUNCTION
+const tail = function(array) {
+const newArray = array.slice(1);
+return newArray;  //slice good for remove 1st few elements of array
 };
 
-/*
-function tail(array) {
-  //const numbers = array[1]; //return a new array; not modify array passed in 
-  //return numbers.slice;
-  const numbers = array.shift(); //not modify array, can't use shift but copy 
-  return numbers;
-}
-*/
-  console.log(tail([1, 2, 3]));
+console.log(tail([1, 2, 3]));
 
-  function eqArrays(array1, array2){  
-    if (array1.length !== array2.length) {
-      return false;
+// TEST / ASSERTION FUNCTIONS
+
+function eqArrays(array1, array2){  
+  if (array1.length !== array2.length) {
+    return false;
     } 
     for (let i = 0; i < array1.length; i++) { //check item at same index if the same; not nested for loop, not need both 1 and 2
       if(array1[i] !== array2[i]) {  //end condition is not equal
@@ -43,19 +37,19 @@ function tail(array) {
       } 
     } 
     return true; //return boolean
-  }
+}
 
-  const assertArraysEqual = function(actual, expected) {  //will use eqArrays to check (gives T or F), declare fn
-    if (eqArrays(actual, expected)) { //need value here using eqArrays, T of F if call it with 2 arrays. takes in 2 arguments, eval arrays 1 and arrays 2
-      console.log(`Assertion Passed ❤: ${actual} === ${expected}`)
-      return true;
+const assertArraysEqual = function(actual, expected) {  //will use eqArrays to check (gives T or F), declare fn
+  if (eqArrays(actual, expected)) { //need value here using eqArrays, T of F if call it with 2 arrays. takes in 2 arguments, eval arrays 1 and arrays 2
+    console.log(`Assertion Passed ❤: ${actual} === ${expected}`)
+    return true;
     } else { //else runs if it is false
       console.log(`Assertion Failed :no_entry:: ${actual} !== ${expected}`)
       return false;
     } 
-  };
+};
 
-// TEST CODE
+// TEST CODE 
 //update the conditional 
 assertArraysEqual(tail([5,6,7]), [6,7]);
 assertArraysEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
